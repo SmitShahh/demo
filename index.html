@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FineCare Investment - Your Trusted Financial Partner for 25+ Years</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #93c5fd;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1e3a8a;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #1e3a8a;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #64748b;
+        }
+
+        .experience-badge {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: #3b82f6;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+        }
+
+        /* About Section */
+        .about {
+            background: #f8fafc;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .certifications {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .cert-badge {
+            background: #3b82f6;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        /* Tools Section */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .tool-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .tool-button {
+            background: #3b82f6;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .tool-button:hover {
+            background: #1d4ed8;
+        }
+
+        /* Calculator Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #000;
+        }
+
+        .calculator {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .calc-input {
+            padding: 0.8rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .calc-result {
+            background: #f0f9ff;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            color: #1e3a8a;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: #f8fafc;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: #64748b;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #1e3a8a;
+        }
+
+        .stars {
+            color: #fbbf24;
+            margin-bottom: 1rem;
+        }
+
+        /* Blog Section */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-image {
+            height: 200px;
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-date {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #1e3a8a;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* WhatsApp Widget */
+        .whatsapp-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-widget:hover {
+            transform: scale(1.1);
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 2rem auto 0;
+            gap: 1rem;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+        }
+
+        .newsletter-button {
+            background: white;
+            color: #1e3a8a;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e3a8a;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #93c5fd;
+        }
+
+        .footer-section a {
+            color: #cbd5e1;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+            color: #cbd5e1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: flex;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #1e3a8a;
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#home" class="logo">FineCare Investment</a>
+                <nav>
+                    <ul id="nav-menu">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#tools">Tools</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="experience-badge">
+                    <i class="fas fa-star"></i> 25+ Years of Trusted Financial Excellence
+                </div>
+                <h1>Your Financial Future, Our Priority</h1>
+                <p class="hero-subtitle">Expert guidance in SIPs, Mutual Funds, NCDs, Insurance, and comprehensive financial planning</p>
+                <a href="#contact" class="cta-button">
+                    <i class="fas fa-rocket"></i> Start Your Investment Journey
+                </a>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section">
+            <div class="container">
+                <h2 class="section-title">Our Core Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>SIPs & Mutual Funds</h3>
+                        <p>Build wealth systematically with our expertly curated mutual fund portfolios and SIP strategies tailored to your financial goals.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Life & Health Insurance</h3>
+                        <p>Comprehensive insurance solutions to protect you and your family's financial security with term plans and health coverage.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <h3>NCDs & Fixed Income</h3>
+                        <p>Secure your future with Non-Convertible Debentures and fixed income products offering stable returns and capital preservation.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-piggy-bank"></i>
+                        </div>
+                        <h3>Tax Saving & Retirement Planning</h3>
+                        <p>Optimize your taxes while building retirement corpus through ELSS, PPF, NPS, and other tax-efficient investment options.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about">
+            <div class="container">
+                <h2 class="section-title">About FineCare Investment</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Founded on Trust, Built on Excellence</h3>
+                        <p>For over 25 years, FineCare Investment has been a trusted partner in helping thousands of families achieve their financial dreams. Our founder's vision was simple yet profound: to democratize quality financial advice and make wealth creation accessible to every Indian family.</p>
+                        
+                        <p>Our mission is to empower individuals with personalized financial strategies, backed by deep market knowledge and unwavering commitment to client success. We believe in building long-term relationships based on transparency, integrity, and consistent performance.</p>
+
+                        <div class="certifications">
+                            <span class="cert-badge">ARN Certified</span>
+                            <span class="cert-badge">IRDA Licensed</span>
+                            <span class="cert-badge">AMFI Registered</span>
+                            <span class="cert-badge">SEBI Compliant</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Our Values</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 1rem; padding-left: 2rem; position: relative;">
+                                <i class="fas fa-check-circle" style="position: absolute; left: 0; top: 0.2rem; color: #3b82f6;"></i>
+                                <strong>Integrity:</strong> Complete transparency in all our dealings
+                            </li>
+                            <li style="margin-bottom: 1rem; padding-left: 2rem; position: relative;">
+                                <i class="fas fa-check-circle" style="position: absolute; left: 0; top: 0.2rem; color: #3b82f6;"></i>
+                                <strong>Excellence:</strong> Continuous improvement in service quality
+                            </li>
+                            <li style="margin-bottom: 1rem; padding-left: 2rem; position: relative;">
+                                <i class="fas fa-check-circle" style="position: absolute; left: 0; top: 0.2rem; color: #3b82f6;"></i>
+                                <strong>Client-First:</strong> Your financial success is our priority
+                            </li>
+                            <li style="margin-bottom: 1rem; padding-left: 2rem; position: relative;">
+                                <i class="fas fa-check-circle" style="position: absolute; left: 0; top: 0.2rem; color: #3b82f6;"></i>
+                                <strong>Innovation:</strong> Embracing technology for better service
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools & Calculators -->
+        <section id="tools" class="section">
+            <div class="container">
+                <h2 class="section-title">Financial Tools & Calculators</h2>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <h3><i class="fas fa-calculator"></i> SIP Calculator</h3>
+                        <p>Calculate your SIP returns and plan your investment strategy with our advanced SIP calculator.</p>
+                        <button class="tool-button" onclick="openCalculator('sip')">Use SIP Calculator</button>
+                    </div>
+                    <div class="tool-card">
+                        <h3><i class="fas fa-chart-pie"></i> Retirement Planner</h3>
+                        <p>Plan your retirement corpus and understand how much you need to invest for a comfortable retirement.</p>
+                        <button class="tool-button" onclick="openCalculator('retirement')">Plan Retirement</button>
+                    </div>
+                    <div class="tool-card">
+                        <h3><i class="fas fa-file-invoice-dollar"></i> Tax Saving Calculator</h3>
+                        <p>Optimize your tax savings with our comprehensive tax planning calculator.</p>
+                        <button class="tool-button" onclick="openCalculator('tax')">Calculate Tax Savings</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="section testimonials">
+            <div class="container">
+                <h2 class="section-title">What Our Clients Say</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-content">"FineCare Investment transformed my financial journey. Their personalized approach and consistent guidance helped me build a substantial retirement corpus. Highly recommended!"</p>
+                        <p class="testimonial-author">- Rajesh Sharma, Entrepreneur</p>
+                    </div>
+                    <div class="testimonial">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-content">"The team's expertise in tax planning saved me lakhs of rupees. Their honest advice and transparent dealings make them stand out in the industry."</p>
+                        <p class="testimonial-author">- Priya Patel, Software Engineer</p>
+                    </div>
+                    <div class="testimonial">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-content">"From mutual funds to insurance, FineCare provides comprehensive financial solutions. Their 25 years of experience truly shows in their service quality."</p>
+                        <p class="testimonial-author">- Amit Kumar, Doctor</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="section">
+            <div class="container">
+                <h2 class="section-title">Investment Insights & Market Updates</h2>
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <i class="fas fa-trending-up"></i>
+                        </div>
+                        <div class="blog-content">
+                            <p class="blog-date">July 2025</p>
+                            <h3>Top 10 Mutual Funds for Long-term Wealth Creation</h3>
+                            <p>Discover the best performing mutual funds that have consistently delivered superior returns over the past decade.</p>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="blog-content">
+                            <p class="blog-date">June 2025</p>
+                            <h3>Insurance Planning: Term vs. ULIP - Making the Right Choice</h3>
+                            <p>A comprehensive guide to understanding different insurance options and choosing what's best for your family.</p>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <div class="blog-content">
+                            <p class="blog-date">May 2025</p>
+                            <h3>NCDs in 2025: Safe Investment Options with Attractive Returns</h3>
+                            <p>Explore the world of Non-Convertible Debentures and how they can strengthen your fixed income portfolio.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">Book Your Free Consultation</h2>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Interest</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service</option>
+                                <option value="sip">SIP & Mutual Funds</option>
+                                <option value="insurance">Life & Health Insurance</option>
+                                <option value="ncd">NCDs & Fixed Income</option>
+                                <option value="tax">Tax Saving & Retirement Planning</option>
+                                <option value="comprehensive">Comprehensive Financial Planning</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message (Optional)</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your financial goals..."></textarea>
+                        </div>
+                        <button type="submit" class="cta-button" style="width: 100%;">
+                            <i class="fas fa-calendar-check"></i> Book Free Consultation
+                        </button>
+                    </form>
+                </div>
+                
+                <div style="text-align: center; margin-top: 3rem;">
+                    <h3 style="color: #1e3a8a; margin-bottom: 1rem;">Contact Information</h3>
+                    <p><i class="fas fa-phone" style="color: #3b82f6; margin-right: 0.5rem;"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope" style="color: #3b82f6; margin-right: 0.5rem;"></i> info@finecareinvestment.com</p>
+                    <p><i class="fas fa-map-marker-alt" style="color: #3b82f6; margin-right: 0.5rem;"></i> 123 Business Hub, Financial District, Mumbai - 400001</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Stay Updated with Market Insights</h2>
+            <p>Get weekly market updates and investment tips directly in your inbox</p>
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+                <button type="submit" class="newsletter-button">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FineCare Investment</h3>
+                    <p>Your trusted financial partner for over 25 years. Building wealth, securing futures, and empowering financial dreams.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <a href="#services">SIP & Mutual Funds</a>
+                    <a href="#services">Life & Health Insurance</a>
+                    <a href="#services">NCDs & Fixed Income</a>
+                    <a href="#services">Tax Planning</a>
+                    <a href="#services">Retirement Planning</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <a href="#tools">SIP Calculator</a>
+                    <a href="#tools">Retirement Planner</a>
+                    <a href="#tools">Tax Calculator</a>
+                    <a href="#blog">Market Insights</a>
+                    <a href="#blog">Investment Guide</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> info@finecareinvestment.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Mumbai, India</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FineCare Investment. All rights reserved. | ARN: 12345-67890 | IRDA License: 54321-09876</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Widget -->
+    <a href="https://wa.me/919876543210" class="whatsapp-widget" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Calculator Modals -->
+    <div id="calculatorModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCalculator()">&times;</span>
+            <div id="calculatorContent"></div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('nav-menu');
+            menu.classList.toggle('active');
+        }
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Calculator Functions
+        function openCalculator(type) {
+            const modal = document.getElementById('calculatorModal');
+            const content = document.getElementById('calculatorContent');
+            
+            let calculatorHTML = '';
+            
+            switch(type) {
+                case 'sip':
+                    calculatorHTML = `
+                        <h2>SIP Calculator</h2>
+                        <div class="calculator">
+                            <label>Monthly Investment (₹)</label>
+                            <input type="number" id="sipAmount" class="calc-input" placeholder="5000" value="5000">
+                            
+                            <label>Expected Annual Return (%)</label>
+                            <input type="number" id="sipRate" class="calc-input" placeholder="12" value="12" step="0.1">
+                            
+                            <label>Investment Period (Years)</label>
+                            <input type="number" id="sipYears" class="calc-input" placeholder="10" value="10">
+                            
+                            <button class="tool-button" onclick="calculateSIP()" style="width: 100%; margin: 1rem 0;">Calculate</button>
+                            
+                            <div id="sipResult" class="calc-result hidden">
+                                <h3>Investment Summary</h3>
+                                <p>Total Investment: ₹<span id="totalInvestment"></span></p>
+                                <p>Expected Returns: ₹<span id="expectedReturns"></span></p>
+                                <p><strong>Maturity Amount: ₹<span id="maturityAmount"></span></strong></p>
+                            </div>
+                        </div>
+                    `;
+                    break;
+                    
+                case 'retirement':
+                    calculatorHTML = `
+                        <h2>Retirement Planning Calculator</h2>
+                        <div class="calculator">
+                            <label>Current Age</label>
+                            <input type="number" id="currentAge" class="calc-input" placeholder="30" value="30">
+                            
+                            <label>Retirement Age</label>
+                            <input type="number" id="retirementAge" class="calc-input" placeholder="60" value="60">
+                            
+                            <label>Monthly Expenses Today (₹)</label>
+                            <input type="number" id="monthlyExpenses" class="calc-input" placeholder="50000" value="50000">
+                            
+                            <label>Expected Inflation (%)</label>
+                            <input type="number" id="inflation" class="calc-input" placeholder="6" value="6" step="0.1">
+                            
+                            <label>Expected Return (%)</label>
+                            <input type="number" id="retirementReturn" class="calc-input" placeholder="10" value="10" step="0.1">
+                            
+                            <button class="tool-button" onclick="calculateRetirement()" style="width: 100%; margin: 1rem 0;">Calculate</button>
+                            
+                            <div id="retirementResult" class="calc-result hidden">
+                                <h3>Retirement Planning Summary</h3>
+                                <p>Years to Retirement: <span id="yearsToRetirement"></span></p>
+                                <p>Monthly Expenses at Retirement: ₹<span id="futureExpenses"></span></p>
+                                <p>Required Corpus: ₹<span id="requiredCorpus"></span></p>
+                                <p><strong>Monthly SIP Required: ₹<span id="monthlySIP"></span></strong></p>
+                            </div>
+                        </div>
+                    `;
+                    break;
+                    
+                case 'tax':
+                    calculatorHTML = `
+                        <h2>Tax Saving Calculator</h2>
+                        <div class="calculator">
+                            <label>Annual Income (₹)</label>
+                            <input type="number" id="annualIncome" class="calc-input" placeholder="1000000" value="1000000">
+                            
+                            <label>Current 80C Investment (₹)</label>
+                            <input type="number" id="current80C" class="calc-input" placeholder="50000" value="50000">
+                            
+                            <label>Additional 80C Investment (₹)</label>
+                            <input type="number" id="additional80C" class="calc-input" placeholder="100000" value="100000">
+                            
+                            <button class="tool-button" onclick="calculateTax()" style="width: 100%; margin: 1rem 0;">Calculate Tax Savings</button>
+                            
+                            <div id="taxResult" class="calc-result hidden">
+                                <h3>Tax Saving Summary</h3>
+                                <p>Tax Bracket: <span id="taxBracket"></span></p>
+                                <p>Tax Before Investment: ₹<span id="taxBefore"></span></p>
+                                <p>Tax After Investment: ₹<span id="taxAfter"></span></p>
+                                <p><strong>Total Tax Saved: ₹<span id="taxSaved"></span></strong></p>
+                            </div>
+                        </div>
+                    `;
+                    break;
+            }
+            
+            content.innerHTML = calculatorHTML;
+            modal.style.display = 'block';
+        }
+
+        function closeCalculator() {
+            document.getElementById('calculatorModal').style.display = 'none';
+        }
+
+        function calculateSIP() {
+            const amount = parseFloat(document.getElementById('sipAmount').value);
+            const rate = parseFloat(document.getElementById('sipRate').value) / 100 / 12;
+            const time = parseFloat(document.getElementById('sipYears').value) * 12;
+            
+            const maturityAmount = amount * (((Math.pow(1 + rate, time)) - 1) / rate) * (1 + rate);
+            const totalInvestment = amount * time;
+            const expectedReturns = maturityAmount - totalInvestment;
+            
+            document.getElementById('totalInvestment').textContent = totalInvestment.toLocaleString('en-IN');
+            document.getElementById('expectedReturns').textContent = expectedReturns.toLocaleString('en-IN');
+            document.getElementById('maturityAmount').textContent = maturityAmount.toLocaleString('en-IN');
+            document.getElementById('sipResult').classList.remove('hidden');
+        }
+
+        function calculateRetirement() {
+            const currentAge = parseInt(document.getElementById('currentAge').value);
+            const retirementAge = parseInt(document.getElementById('retirementAge').value);
+            const monthlyExpenses = parseFloat(document.getElementById('monthlyExpenses').value);
+            const inflation = parseFloat(document.getElementById('inflation').value) / 100;
+            const returnRate = parseFloat(document.getElementById('retirementReturn').value) / 100;
+            
+            const yearsToRetirement = retirementAge - currentAge;
+            const futureExpenses = monthlyExpenses * Math.pow(1 + inflation, yearsToRetirement);
+            const requiredCorpus = (futureExpenses * 12) / (returnRate - inflation) * 25; // 25x annual expenses
+            const monthlySIP = requiredCorpus / (((Math.pow(1 + returnRate/12, yearsToRetirement * 12)) - 1) / (returnRate/12));
+            
+            document.getElementById('yearsToRetirement').textContent = yearsToRetirement;
+            document.getElementById('futureExpenses').textContent = futureExpenses.toLocaleString('en-IN');
+            document.getElementById('requiredCorpus').textContent = (requiredCorpus/10000000).toFixed(2) + ' Crores';
+            document.getElementById('monthlySIP').textContent = monthlySIP.toLocaleString('en-IN');
+            document.getElementById('retirementResult').classList.remove('hidden');
+        }
+
+        function calculateTax() {
+            const income = parseFloat(document.getElementById('annualIncome').value);
+            const current80C = parseFloat(document.getElementById('current80C').value);
+            const additional80C = parseFloat(document.getElementById('additional80C').value);
+            
+            const total80C = Math.min(current80C + additional80C, 150000);
+            
+            function calculateIncomeTax(taxableIncome) {
+                let tax = 0;
+                if (taxableIncome > 1000000) {
+                    tax += (taxableIncome - 1000000) * 0.3;
+                    taxableIncome = 1000000;
+                }
+                if (taxableIncome > 500000) {
+                    tax += (taxableIncome - 500000) * 0.2;
+                    taxableIncome = 500000;
+                }
+                if (taxableIncome > 250000) {
+                    tax += (taxableIncome - 250000) * 0.05;
+                }
+                return tax;
+            }
+            
+            const taxBefore = calculateIncomeTax(income - current80C);
+            const taxAfter = calculateIncomeTax(income - total80C);
+            const taxSaved = taxBefore - taxAfter;
+            
+            let bracket = "5%";
+            if (income > 500000) bracket = "20%";
+            if (income > 1000000) bracket = "30%";
+            
+            document.getElementById('taxBracket').textContent = bracket;
+            document.getElementById('taxBefore').textContent = taxBefore.toLocaleString('en-IN');
+            document.getElementById('taxAfter').textContent = taxAfter.toLocaleString('en-IN');
+            document.getElementById('taxSaved').textContent = taxSaved.toLocaleString('en-IN');
+            document.getElementById('taxResult').classList.remove('hidden');
+        }
+
+        // Form Submissions
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your interest! Our team will contact you within 24 hours to schedule your free consultation.');
+            this.reset();
+        });
+
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Successfully subscribed to our newsletter! You will receive weekly market updates and investment insights.');
+            this.reset();
+        });
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('calculatorModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Add scrolling effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(30, 58, 138, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%)';
+                header.style.backdropFilter = 'none';
+            }
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all service cards and other elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateElements = document.querySelectorAll('.service-card, .testimonial, .blog-card, .tool-card');
+            animateElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
